@@ -1,3 +1,4 @@
+//Server Ts compatible con netlifly puede que no funcione en otros lados
 import { AngularAppEngine, createRequestHandler } from '@angular/ssr'
 import { getContext } from '@netlify/angular-runtime/context.mjs'
 
