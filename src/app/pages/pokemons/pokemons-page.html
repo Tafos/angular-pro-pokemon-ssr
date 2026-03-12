@@ -5,13 +5,15 @@
 
 <!--TODO: pokemon-list-->
 @if (pokemons()) {
-<pokemon-list [pokemons]="pokemons()"></pokemon-list>
-} @else {
+  <pokemon-list [pokemons]="pokemons()"></pokemon-list>
+} @else{
   <pokemon-list-skeleton></pokemon-list-skeleton>
 }
 <!--TODO: pokemon-list-skeleton-->
 <div class="flex justify-between">
-  <button (click)="loadPokemons(-1)" class="mt-2">Anteriores</button>
-  <button (click)="loadPokemons(+1)" class="mt-2">Siguientes</button>
+  <!-- <button (click)="loadPokemons(-1)" class="mt-2">Anteriores</button>
+  <button (click)="loadPokemons(+1)" class="mt-2">Siguientes</button> -->
+  <button [disabled]="currentPage() === 1" [routerLink]="['/pokemons/page', currentPage()!-1]" class="mt-2">Anteriores</button>
+  <button [routerLink]="['/pokemons/page', currentPage()!+1]" class="mt-2">Siguientes</button>
 </div>
 <!--TODO: cargar siguientes y anteriores-->
